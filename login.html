@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EkoNazorat — Kirish / Ro‘yxat</title>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>EkoNazorat</h1>
+
+      <!-- Toggler tugmalar -->
+      <div class="form-toggle">
+        <button onclick="showLogin()">Kirish</button>
+        <button onclick="showRegister()">Ro‘yxatdan o‘tish</button>
+      </div>
+
+      <!-- Kirish formasi -->
+      <form id="login-form" style="display: none">
+        <input
+          type="text"
+          placeholder="Email yoki Telefon"
+          name="login"
+          required
+        />
+        <input type="password" placeholder="Parol" name="password" required />
+        <button type="submit">Kirish</button>
+      </form>
+
+      <!-- Ro‘yxatdan o‘tish formasi -->
+      <form id="register-form">
+        <input type="text" placeholder="Ism" name="name" />
+        <input type="email" placeholder="Email" name="email" />
+        <div class="or">YOKI</div>
+        <input type="tel" placeholder="Telefon raqami" name="phone" />
+        <input type="password" placeholder="Parol" name="password" required />
+        <button type="submit">Ro‘yxatdan o‘tish</button>
+      </form>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

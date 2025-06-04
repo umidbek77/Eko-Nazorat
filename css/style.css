@@ -1,0 +1,309 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #e5f8ed;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* CONTENT BLOKLAR */
+main {
+  max-width: 85%;
+  margin: 30px auto; /* markazga joylashadi */
+  padding: 20px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  display: none;
+  padding: 1rem;
+  background-color: #f0fdf4;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 60vh;
+  width: 1500px;
+}
+
+.section:first-of-type {
+  display: block;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  background-color: #2e7d32;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* MENU */
+.menu button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.menu button:hover {
+  background-color: #a5d6a7;
+}
+
+/* jadval kodi */
+#jadval {
+  padding: 40px 20px;
+  background-color: #f0fdf4;
+}
+
+#jadval h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #15803d;
+}
+
+#jadval-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#jadval-table th,
+#jadval-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+#jadval-table th {
+  background-color: #10b981;
+  color: white;
+  font-weight: bold;
+}
+
+#jadval-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#jadval-table tr:hover {
+  background-color: #d1fae5;
+}
+
+/* Shikoyat kodi */
+.shikoyat {
+  display: none;
+  padding: 40px 20px;
+  background-color: #f0fdf4;
+}
+
+.shikoyat-title {
+  text-align: center;
+  color: #047857;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.shikoyat-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 1px #10b981;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #059669;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #047857;
+}
+
+.form-message {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+  color: #047857;
+  font-size: 14px;
+}
+
+/* to'lov kodi */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.tolov-title {
+  text-align: center;
+  color: #047857;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.t-title {
+  text-align: center;
+  color: #57e17e;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  background-color: #2f855a; /* yashil fon */
+  color: white;
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #c6f6d5; /* engil yashil hover */
+  cursor: pointer;
+}
+
+/* Xarita kodi */
+#map {
+  height: 500px; /* Xarita balandligi */
+  width: 100%; /* To‘liq kenglik */
+  border: 2px solid #4caf50; /* Yashil rangda qalin chegarasi */
+  border-radius: 8px; /* Yumaloq burchaklar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Yengil soyalar */
+  margin: 0 auto; /* Markazlashtirish */
+}
+
+/* Xarita sarlavhasi  */
+#xarita h2 {
+  color: #2f855a; /* To‘q yashil rang */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* footer kodi */
+.footer {
+  background-color: #2e7d32;
+  color: white;
+  padding: 2rem 100px;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 2rem;
+}
+
+.footer-left,
+.footer-nav,
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.footer-nav a,
+.footer-social a {
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover,
+.footer-social a:hover {
+  color: #a5d6a7;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+}
