@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EkoNazorat — Bosh sahifa</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">EkoNazorat</div>
+        <nav class="menu">
+          <button onclick="showSection('jadval')">Jadval</button>
+          <button onclick="showSection('shikoyat')">Shikoyat</button>
+          <button onclick="showSection('tolov')">To‘lov</button>
+          <button onclick="showSection('xarita')">Xarita</button>
+        </nav>
+      </header>
+
+      <!-- Sections -->
+      <main>
+        <section id="jadval" class="page section" style="display: none">
+          <h2>Chiqindi Olib Ketish Jadvali</h2>
+          <table id="jadval-table" border="1">
+            <thead>
+              <tr>
+                <th>Mahalla</th>
+                <th>Ko‘cha</th>
+                <th>Kun</th>
+                <th>Vaqt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Ma'lumotlar JS orqali bu yerga yuklanadi -->
+            </tbody>
+          </table>
+        </section>
+
+        <section id="shikoyat" class="shikoyat section" style="display: none">
+          <h2 class="shikoyat-title">Shikoyat yuborish</h2>
+          <form id="shikoyatForm" class="shikoyat-form">
+            <div class="form-group">
+              <label for="name">Ismingiz</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefon raqamingiz</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Shikoyatingiz</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Yuborish</button>
+            <p id="formMessage" class="form-message">
+              Shikoyatingiz yuborildi. Rahmat!
+            </p>
+          </form>
+        </section>
+
+        <section
+          id="tolov"
+          class="hidden px-4 py-8 bg-gray-50 section"
+          style="display: none"
+        >
+          <h2
+            class="text-2xl font-bold text-center text-green-700 mb-6 tolov-title"
+          >
+            To‘lovlar
+          </h2>
+
+          <div
+            class="max-w-xl mx-auto bg-white shadow-md rounded p-6 space-y-6"
+          >
+            <div>
+              <h3 class="text-lg font-semibold mb-2 t-title">
+                Xizmat narxlari
+              </h3>
+              <table
+                id="price-table"
+                class="w-full border-collapse border border-gray-300"
+              >
+                <thead>
+                  <tr class="bg-green-100">
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      Xizmat nomi
+                    </th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      Narxi (so‘m)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Narxlar shu yerga JS orqali qo'shiladi -->
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold mb-2 t-title">
+                To‘lovlar tarixi
+              </h3>
+              <table
+                id="payment-history-table"
+                class="w-full border-collapse border border-gray-300"
+              >
+                <thead>
+                  <tr class="bg-green-100">
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      Sana
+                    </th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      Xizmat nomi
+                    </th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      Summa (so‘m)
+                    </th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">
+                      Holat
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- To‘lovlar tarixi shu yerga JS orqali qo'shiladi -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="xarita"
+          class="hidden px-4 py-8 section"
+          style="display: none"
+        >
+          <h2 class="text-2xl font-bold text-center text-green-700 mb-6">
+            Chiqindi mashinalari xaritasi
+          </h2>
+          <div
+            id="map"
+            style="height: 500px; width: 100%; border: 1px solid #ccc"
+          ></div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Left: Logo va kontakt -->
+          <div class="footer-left">
+            <div class="footer-logo">EkoNazorat</div>
+            <p>📞 +998 90 123 45 67</p>
+            <p>✉️ info@ekonazorat.uz</p>
+          </div>
+
+          <!-- Center: Navigatsiya -->
+          <div class="footer-nav">
+            <a href="#" onclick="showSection('jadval')">Jadval</a>
+            <a href="#" onclick="showSection('shikoyat')">Shikoyat</a>
+            <a href="#" onclick="showSection('tolov')">To‘lov</a>
+            <a href="#" onclick="showSection('xarita')">Xarita</a>
+          </div>
+
+          <!-- Right: Ijtimoiy tarmoqlar -->
+          <div class="footer-social">
+            <a href="https://t.me/ekonazorat" target="_blank">Telegram</a>
+            <a href="https://instagram.com/ekonazorat" target="_blank"
+              >Instagram</a
+            >
+            <a href="#">Facebook</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 EkoNazorat. Barcha huquqlar himoyalangan.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/js/main.js"></script>
+    <script src="/js/jadval.js"></script>
+    <script src="/js/shikoyat.js"></script>
+    <script src="/js/tolov.js"></script>
+    <script src="/js/xarita.js"></script>
+  </body>
+</html>

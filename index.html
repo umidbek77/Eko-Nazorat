@@ -1,195 +1,221 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EkoNazorat — Bosh sahifa</title>
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/landing.css" />
+    <title>landing</title>
   </head>
   <body>
-    <div class="wrapper">
-      <!-- Header -->
-      <header class="header">
+    <!-- HEADER (Landing Page) -->
+    <header class="landing-header">
+      <div class="container header-container">
         <div class="logo">EkoNazorat</div>
-        <nav class="menu">
-          <button onclick="showSection('jadval')">Jadval</button>
-          <button onclick="showSection('shikoyat')">Shikoyat</button>
-          <button onclick="showSection('tolov')">To‘lov</button>
-          <button onclick="showSection('xarita')">Xarita</button>
+        <!-- BURGER ICON -->
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="nav-menu">
+          <a href="#hero">Bosh sahifa</a>
+          <a href="#stats">Statistika</a>
+          <a href="#about">Loyiha haqida</a>
+          <a href="#steps">Qanday ishlaydi?</a>
+          <a href="#features">Afzalliklar</a>
+          <a href="#app">Mobil ilova</a>
+          <a href="#cta">Shikoyat yuborish</a>
+          <a href="#contact">Bog'lanish</a>
         </nav>
-      </header>
+        <button id="mode-toggle" class="mode-toggle">🌙Dark</button>
+      </div>
+    </header>
 
-      <!-- Sections -->
-      <main>
-        <section id="jadval" class="page section" style="display: none">
-          <h2>Chiqindi Olib Ketish Jadvali</h2>
-          <table id="jadval-table" border="1">
-            <thead>
-              <tr>
-                <th>Mahalla</th>
-                <th>Ko‘cha</th>
-                <th>Kun</th>
-                <th>Vaqt</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Ma'lumotlar JS orqali bu yerga yuklanadi -->
-            </tbody>
-          </table>
-        </section>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section fade-up">
+      <div class="hero-image-wrapper">
+        <img src="assets/hero.jpg" alt="EkoNazorat banner" class="hero-image" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+          <h1 class="hero-title">EkoNazorat — Tozalik O‘z Foydamiz Uchun!</h1>
+          <p class="hero-subtitle">
+            Toza atrof-muhit — sog‘lom kelajak garovi. Kelajak avlod uchun
+            bugundan harakat qilaylik!
+          </p>
+          <p class="hero-description">
+            <strong>EkoNazorat</strong> — ekologik muammolarni tezda aniqlab,
+            vakolatli tashkilotlarga xabar beruvchi onlayn monitoring tizimi.
+          </p>
+          <a href="./dashboard.html" class="hero-btn outline"
+            >Platformaga o‘tish</a
+          >
+        </div>
+      </div>
+    </section>
 
-        <section id="shikoyat" class="shikoyat section" style="display: none">
-          <h2 class="shikoyat-title">Shikoyat yuborish</h2>
-          <form id="shikoyatForm" class="shikoyat-form">
-            <div class="form-group">
-              <label for="name">Ismingiz</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Telefon raqamingiz</label>
-              <input type="tel" id="phone" name="phone" required />
-            </div>
-            <div class="form-group">
-              <label for="message">Shikoyatingiz</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Yuborish</button>
-            <p id="formMessage" class="form-message">
-              Shikoyatingiz yuborildi. Rahmat!
+    <!-- STATISTICS SECTION -->
+    <section id="stats" class="stats-section fade-up">
+      <div class="container">
+        <h2 class="section-title">Bizning natijalarimiz</h2>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-number" data-target="3570">0</div>
+            <p>Foydalanuvchi</p>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" data-target="1248">0</div>
+            <p>Yuborilgan shikoyatlar</p>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" data-target="982">0</div>
+            <p>Hal qilingan muammolar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section fade-up">
+      <div class="container about-content">
+        <div class="about-text">
+          <h2 class="section-title">Loyiha haqida</h2>
+          <p>
+            <strong>EkoNazorat</strong> — bu atrof-muhitdagi ekologik
+            muammolarni tezda aniqlab, vakolatli tashkilotlarga xabar berishga
+            yordam beruvchi onlayn monitoring tizimi. Fuqarolar chiqindi,
+            ifloslanish va boshqa ekologik holatlar haqida oson xabar berishlari
+            mumkin.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="assets/EkoNazorat.png" alt="Eko Nazorat haqida rasm" />
+        </div>
+      </div>
+    </section>
+
+    <!-- STEPS SECTION -->
+    <section id="steps" class="steps-section fade-up">
+      <div class="container">
+        <h2 class="section-title">Qanday ishlaydi?</h2>
+        <div class="steps-grid">
+          <div class="step-item">
+            <img src="assets/c-1.jpg" alt="Rasmga oling" />
+            <p><span>1.</span> Muammoni rasmga oling</p>
+          </div>
+          <div class="step-item">
+            <img src="assets/c-2.webp" alt="Shikoyatni yuklang" />
+            <p><span>2.</span> Shikoyatni tizimga yuklang</p>
+          </div>
+          <div class="step-item">
+            <img src="assets/c-3.png" alt="Kuzating" />
+            <p><span>3.</span> Jarayonni real vaqt rejimida kuzating</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="features-section fade-up">
+      <div class="container">
+        <h2 class="section-title">Nega aynan EkoNazorat?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📡</div>
+            <h3>Real vaqt monitoring</h3>
+            <p>Shikoyatlar darhol monitoring bazasiga tushadi.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h3>Tezkorlik</h3>
+            <p>
+              Arizalar tezda ko‘rib chiqiladi va ma’sullar xabardor qilinadi.
             </p>
-          </form>
-        </section>
-
-        <section
-          id="tolov"
-          class="hidden px-4 py-8 bg-gray-50 section"
-          style="display: none"
-        >
-          <h2
-            class="text-2xl font-bold text-center text-green-700 mb-6 tolov-title"
-          >
-            To‘lovlar
-          </h2>
-
-          <div
-            class="max-w-xl mx-auto bg-white shadow-md rounded p-6 space-y-6"
-          >
-            <div>
-              <h3 class="text-lg font-semibold mb-2 t-title">
-                Xizmat narxlari
-              </h3>
-              <table
-                id="price-table"
-                class="w-full border-collapse border border-gray-300"
-              >
-                <thead>
-                  <tr class="bg-green-100">
-                    <th class="border border-gray-300 px-4 py-2 text-left">
-                      Xizmat nomi
-                    </th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">
-                      Narxi (so‘m)
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Narxlar shu yerga JS orqali qo'shiladi -->
-                </tbody>
-              </table>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-semibold mb-2 t-title">
-                To‘lovlar tarixi
-              </h3>
-              <table
-                id="payment-history-table"
-                class="w-full border-collapse border border-gray-300"
-              >
-                <thead>
-                  <tr class="bg-green-100">
-                    <th class="border border-gray-300 px-4 py-2 text-left">
-                      Sana
-                    </th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">
-                      Xizmat nomi
-                    </th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">
-                      Summa (so‘m)
-                    </th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">
-                      Holat
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- To‘lovlar tarixi shu yerga JS orqali qo'shiladi -->
-                </tbody>
-              </table>
-            </div>
           </div>
-        </section>
-
-        <section
-          id="xarita"
-          class="hidden px-4 py-8 section"
-          style="display: none"
-        >
-          <h2 class="text-2xl font-bold text-center text-green-700 mb-6">
-            Chiqindi mashinalari xaritasi
-          </h2>
-          <div
-            id="map"
-            style="height: 500px; width: 100%; border: 1px solid #ccc"
-          ></div>
-        </section>
-      </main>
-
-      <!-- FOOTER -->
-      <footer class="footer">
-        <div class="footer-container">
-          <!-- Left: Logo va kontakt -->
-          <div class="footer-left">
-            <div class="footer-logo">EkoNazorat</div>
-            <p>📞 +998 90 123 45 67</p>
-            <p>✉️ info@ekonazorat.uz</p>
-          </div>
-
-          <!-- Center: Navigatsiya -->
-          <div class="footer-nav">
-            <a href="#" onclick="showSection('jadval')">Jadval</a>
-            <a href="#" onclick="showSection('shikoyat')">Shikoyat</a>
-            <a href="#" onclick="showSection('tolov')">To‘lov</a>
-            <a href="#" onclick="showSection('xarita')">Xarita</a>
-          </div>
-
-          <!-- Right: Ijtimoiy tarmoqlar -->
-          <div class="footer-social">
-            <a href="https://t.me/ekonazorat" target="_blank">Telegram</a>
-            <a href="https://instagram.com/ekonazorat" target="_blank"
-              >Instagram</a
-            >
-            <a href="#">Facebook</a>
+          <div class="feature-card">
+            <div class="feature-icon">📍</div>
+            <h3>Joylashuv asosida</h3>
+            <p>Xaritada muammo joylashuvi aniqlanadi.</p>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>© 2025 EkoNazorat. Barcha huquqlar himoyalangan.</p>
+      </div>
+    </section>
+
+    <!-- APP PREVIEW SECTION -->
+    <section id="app" class="app-preview-section fade-up">
+      <div class="container">
+        <h2 class="section-title">Ilovamiz ko‘rinishi</h2>
+        <div class="app-preview-wrapper">
+          <img
+            src="assets/image.png"
+            alt="EkoNazorat ilova skrinshoti"
+            class="app-preview-img"
+          />
         </div>
-      </footer>
-    </div>
-    <script src="/js/main.js"></script>
-    <script src="/js/jadval.js"></script>
-    <script src="/js/shikoyat.js"></script>
-    <script src="/js/tolov.js"></script>
-    <script src="/js/xarita.js"></script>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="cta" class="cta-section fade-up">
+      <div class="container cta-container">
+        <div class="cta-text">
+          <h2 class="cta-title">Ekologik muammolarga befarq emasmisiz?</h2>
+          <p class="cta-desc">
+            Shunchaki ko‘rmaslikdan ko‘ra, birgalikda muammolarni hal qilaylik.
+            EkoNazorat orqali siz nafaqat xabar berasiz — siz o‘z hududingizni
+            yaxshilashga hissa qo‘shasiz.
+          </p>
+          <a href="./dashboard.html" class="cta-btn">Endi shikoyat yuboring</a>
+        </div>
+        <div class="cta-illustration">
+          <img src="assets/EkoNazorat.png" alt="Ekologik harakat" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer fade-up">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <h3>Eko<span>Nazorat</span></h3>
+          <p>
+            Email: <a href="mailto:info@ekonazorat.uz">info@ekonazorat.uz</a>
+          </p>
+          <p>Tel: <a href="tel:+998901234567">+998 90 123 45 67</a></p>
+        </div>
+
+        <div class="footer-nav">
+          <h4>Bo‘limlar</h4>
+          <ul>
+            <li><a href="#">Bosh sahifa</a></li>
+            <li><a href="#about">Loyiha haqida</a></li>
+            <li><a href="#steps">Qanday ishlaydi?</a></li>
+            <li><a href="#app">Ilova</a></li>
+            <li><a href="#cta">Shikoyat</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h4>Ijtimoiy tarmoqlar</h4>
+          <ul>
+            <li>
+              <a href="https://t.me/ekonazorat" target="_blank">Telegram</a>
+            </li>
+            <li>
+              <a href="https://instagram.com/ekonazorat" target="_blank"
+                >Instagram</a
+              >
+            </li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 <strong>EkoNazorat</strong>. Barcha huquqlar himoyalangan.
+        </p>
+      </div>
+    </footer>
+
+    <script src="./js/landing.js"></script>
   </body>
 </html>
